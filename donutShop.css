@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	color: #444;
+	background: #eee;
+}
+header, #objective, #dataStatic, #dataRandom {
+	padding: 10%;
+}
+header {
+	background: #097054;
+	color: #eee;
+	text-align: center;
+}
+h1, h2 {
+	margin: 0;
+}
+header h1 {
+	margin-bottom: 10px;
+}
+#objective {
+	backgrond: #ffde00;
+}
+#dataStatic {
+	background: #6599ff;
+}
+#dataRandom {
+ background: #ff9900;
+}
+#downtown, #southLakeUnion, #ballard, #downtown caption, #southLakeUnion caption, #ballard caption {
+	background: #00628b;
+	color: #eee;
+}
+#capitolHill, #wedgewood, #capitolHill caption, #wedgewood caption {
+ background: #e6e6dc;
+}
+
