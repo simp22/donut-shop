@@ -18,43 +18,83 @@
 		<p>This is a simulator of a donut shop's production for a single day. The objective is to develop the program with <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code>.</p>
 		<p>There are two types of data:</p>
 		<ol>
-    	<li>Static Data</li>
-    	<li>Random Data</li> 
+    	<li>Summarized Data</li>
+    	<li>Detailed Data</li> 
 		</ol>	
 		<p>The program focuses on a donut shop object with properties and methods and then building instances from the constructor function. These instances in this particular case are the individual locations or franchises.</p>
 	</section>
 
 	<main>
 
-		<section id="dataStatic">
+		<section>
+			<h3>Test</h3>
+			<table>
+				<tr id="test">
+				</tr>
+			</table>
+		</section>
 
-			<h3>Static Data</h3>
+		<section id="settings">
+
+			<h3>Settings</h3>
+
+			<table>
+				<tr>
+					<th scope="row">Date</th>
+					<td><time datetime="2015-03-22">March 22, 2015</time></td>
+				</tr>
+				<tr>
+					<th scope="row">Opening Time</th>
+					<td><time datetime="07:00">7:00 AM</time></td>
+				</tr>
+				<tr>
+					<th scope="row">Closing Time</th>
+					<td><time datetime="18:00">6:00 PM</time></td>
+				</tr>
+				<!-- <tr>
+					<th scope="row">Downtown</th>
+					<td><input type="checkbox" id="optSummarizedDowntown" checked="checked"></td>
+				</tr>
+				<tr>
+					<th scope="row">Capitol Hill</th>
+					<td><input type="checkbox" id="optSummarizedCapitolHill" checked="checked"></td>
+				</tr>
+				<tr>
+					<th scope="row">South Lake Union</th>
+					<td><input type="checkbox" id="optSummarizedSouthLakeUnion" checked="checked"></td>
+				</tr>
+				<tr>
+					<th scope="row">Wedgewood</th>
+					<td><input type="checkbox" id="optSummarizedWedgewood" checked="checked"></td>
+				</tr>
+				<tr>
+					<th scope="row">Ballard</th>
+					<td><input type="checkbox" id="optSummarizedBallard" checked="checked"></td> -->
+				</tr>
+			</table>
+		</section>
+
+		<section id="dataSummarized">
+
+			<h3>Summarized Data</h3>
 
 			<table id="locations">
 				<thead>
 					<th></th>
-					<th scope="col"><a href="#downtown">Downtown</a></th>
-					<th scope="col"><a href="#capitolHill">Capitol Hill</a></th>
-					<th scope="col"><a href="#southLakeUnion">South Lake Union</a></th>
-					<th scope="col"><a href="#wedgewood">Wedgewood</a></th>
-					<th scope="col"><a href="#ballard">Ballard</a></th>
+					<th scope="col"><a href="#detailedDowntown">Downtown</a></th>
+					<th scope="col"><a href="#detailedCapitolHill">Capitol Hill</a></th>
+					<th scope="col"><a href="#detailedSouthLakeUnion">South Lake Union</a></th>
+					<th scope="col"><a href="#detailedWedgewood">Wedgewood</a></th>
+					<th scope="col"><a href="#detailedBallard">Ballard</a></th>
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row">Opening Time</th>
-						<td><time datetime="07:00">7:00 AM</time></td>
-						<td><time datetime="07:00">7:00 AM</time></td>
-						<td><time datetime="07:00">7:00 AM</time></td>
-						<td><time datetime="07:00">7:00 AM</time></td>
-						<td><time datetime="07:00">7:00 AM</time></td>
-					</tr>
-					<tr>
-						<th scope="row">Closing Time</th>
-						<td><time datetime="18:00">6:00 PM</time></td>
-						<td><time datetime="18:00">6:00 PM</time></td>
-						<td><time datetime="18:00">6:00 PM</time></td>
-						<td><time datetime="18:00">6:00 PM</time></td>
-						<td><time datetime="18:00">6:00 PM</time></td>
+						<th scope="row">Hours Open Each Day</th>
+						<td>11</td>
+						<td>11</td>
+						<td>11</td>
+						<td>11</td>
+						<td>11</td>
 					</tr>
 					<tr>
 						<th scope="row">Min Customers Per Hour</th>
@@ -80,21 +120,45 @@
 						<td>1.25</td>
 						<td>3.75</td>
 					</tr>
+					<tr>
+						<th scope="row">Average Donuts Purchased Per Hour</th>
+						<td>16</td>
+						<td>32</td>
+						<td>100</td>
+						<td>19</td>
+						<td>126</td>
+					</tr>
+					<tr>
+						<th scope="row">Total Donuts Sold for the Day</th>
+						<td>181</td>
+						<td>354</td>
+						<td>1101</td>
+						<td>212</td>
+						<td>1393</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><input type="checkbox" id="optDetailedDowntown"></td>
+						<td><input type="checkbox" id="optDetailedCapitolHill"></td>
+						<td><input type="checkbox" id="optDetailedSouthLakeUnion"></td>
+						<td><input type="checkbox" id="optDetailedWedgewood"></td>
+						<td><input type="checkbox" id="optDetailedBallard"></td>
+					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="5">&ast; This output sets the parameters for each location's generated <a href="#dataRandom">Random Data</a> populated below.</td>
+						<td colspan="5">&ast; This output sets the parameters for each location's generated <a href="#dataDetailed">Detailed Data</a> populated below.</td>
 					</tr>
 				</tfoot>
 			</table>
 		</section>
 
-		<section id="dataRandom">
+		<section id="dataDetailed">
 
-			<h3>Random Data</h3>
+			<h3>Detailed Data</h3>
 
-			<table id="downtown">
+			<table id="detailedDowntown">
 				<caption>Downtown</caption>
 				<thead>
 						<th></th>
@@ -139,24 +203,16 @@
 						<td>7</td>
 						<td>17</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td colspan="11">16</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Donuts Sold for the Day</th>
-						<td colspan="11">181</td>
-					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="11">&ast; A page refresh will alter the output due to the random function and the parameters set for each location's <a href="#dataStatic">Static Data</a>.</td>
+						<td colspan="11">&ast; The output is based on parameters in the above <a href="#dataSummarized">Summarized Data</a>.</td>
 					</tr>
 				</tfoot>
 			</table>
 
-			<table id="capitolHill">
+			<table id="detailedCapitolHill">
 				<caption>Capitol Hill</caption>
 				<thead>
 				<thead>
@@ -203,24 +259,16 @@
 						<td>72</td>
 						<td>12</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td colspan="11">32</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Donuts Sold for the Day</th>
-						<td colspan="11">354</td>
-					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="11">&ast; A page refresh will alter the output due to the random function and the parameters set for each location's <a href="#dataStatic">Static Data</a>.</td>
+						<td colspan="11">&ast; The output is based on parameters in the above <a href="#dataSummarized">Summarized Data</a>.</td>
 					</tr>
 				</tfoot>
 			</table>
 
-			<table id="southLakeUnion">
+			<table id="detailedSouthLakeUnion">
 				<caption>South Lake Union</caption>
 				<thead>
 				<thead>
@@ -267,24 +315,16 @@
 						<td>145</td>
 						<td>94</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td colspan="11">100</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Donuts Sold for the Day</th>
-						<td colspan="11">1101</td>
-					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="11">&ast; A page refresh will alter the output due to the random function and the parameters set for each location's <a href="#dataStatic">Static Data</a>.</td>
+						<td colspan="11">&ast; The output is based on parameters in the above <a href="#dataSummarized">Summarized Data</a>.</td>
 					</tr>
 				</tfoot>
 			</table>
 
-			<table id="wedgewood">
+			<table id="detailedWedgewood">
 				<caption>Wedgewood</caption>
 				<thead>
 				<thead>
@@ -331,24 +371,16 @@
 						<td>35</td>
 						<td>16</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td colspan="11">19</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Donuts Sold for the Day</th>
-						<td colspan="11">212</td>
-					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="11">&ast; A page refresh will alter the output due to the random function and the parameters set for each location's <a href="#dataStatic">Static Data</a>.</td>
+						<td colspan="11">&ast; The output is based on parameters in the above <a href="#dataSummarized">Summarized Data</a>.</td>
 					</tr>
 				</tfoot>
 			</table>
 
-			<table id="ballard">
+			<table id="detailedBallard">
 				<caption>Ballard</caption>
 				<thead>
 				<thead>
@@ -395,19 +427,11 @@
 						<td>93</td>
 						<td>191</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td colspan="11">126</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Donuts Sold for the Day</th>
-						<td colspan="11">1393</td>
-					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="11">&ast; A page refresh will alter the output due to the random function and the parameters set for each location's <a href="#dataStatic">Static Data</a>.</td>
+						<td colspan="11">&ast; The output is based on parameters in the above <a href="#dataSummarized">Summarized Data</a>.</td>
 					</tr>
 				</tfoot>
 			</table>
@@ -416,6 +440,8 @@
 
 	<footer>&copy; 2015 michael williams</footer>
 	
-	<script type="text/javascript" src="donutShop.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="donutShop_JavaScript.js"></script>
+	<script type="text/javascript" src="donutShop_jQuery.js"></script>
 </body>
 </html>

@@ -2,37 +2,86 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	color: #444;
 	background: #eee;
+	color: ccc;
+	text-align: center;
+	line-height: 1.2em;
 }
-header, #objective, #dataStatic, #dataRandom {
-	padding: 10%;
+#objective, th[scope="row"], tfoot {
+	text-align: left;
+}
+header, #settings, #objective, #dataSummarized, #dataDetailed, table, footer {
+	padding: 3% 5%;
 }
 header {
-	background: #097054;
+	background: #339966;
 	color: #eee;
 	text-align: center;
 }
-h1, h2 {
-	margin: 0;
+a {
+	color: #339966;
+	text-decoration: none;
 }
-header h1 {
-	margin-bottom: 10px;
+table {
+	margin: 0 auto;
+	width: 100%;
+}
+h1, h2, h3, caption {
+	margin: 0;
+	padding: 3% 3% .5%;
+	line-height: normal;
+}
+h1 {
+	padding-top: 0;
+	font-size: 5em;
+	letter-spacing: -.01em;
 }
 #objective {
 	backgrond: #ffde00;
 }
-#dataStatic {
-	background: #6599ff;
+#settings {
+	background: #ccc;
 }
-#dataRandom {
+#settings table {
+	width: 60%;
+}
+#dataDetailed {
  background: #ff9900;
 }
-#downtown, #southLakeUnion, #ballard, #downtown caption, #southLakeUnion caption, #ballard caption {
-	background: #00628b;
-	color: #eee;
+#dataDetailed h3 {
+	padding-bottom: 3%;
 }
-#capitolHill, #wedgewood, #capitolHill caption, #wedgewood caption {
+caption {
+	text-transform: uppercase;
+}
+th, td {
+	padding: .5em;
+}
+#detailedDowntown, #detailedSouthLakeUnion, #detailedBallard, #detailedDowntown caption, #detailedSouthLakeUnion caption, #detailedBallard caption {
+	background: #ccc;
+}
+#detailedCapitolHill, #detailedWedgewood, #detailedCapitolHill caption, #detailedWedgewood caption {
  background: #e6e6dc;
 }
+
+#detailedDowntown, #detailedCapitolHill, #detailedSouthLakeUnion, #detailedWedgewood, #detailedBallard {
+	display: none;
+}
+
+@media (min-width: 1000px) {
+	body {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+}
+@media (max-width: 1000px) {
+	body {
+		font-size: .8em;
+	}
+	#settings table {
+		width: 75%;
+	}
+}
+
+
 

@@ -15,9 +15,22 @@ var southLakeUnion = new FranchiseSummarized('South Lake Union', 11, 9, 23, 6.33
 var wedgewood = new FranchiseSummarized('Wedgewood', 11, 2, 28, 1.25, 19, 212);
 var ballard = new FranchiseSummarized('Ballard', 11, 8, 58, 3.75, 126, 1393);
 
-var td = ''
-for (var i = 0; i < downtown.length; i++ ) {
+function getPropToArray(obj) {
+	var arr = [];
+	for (var key in obj) {
+	  if (obj.hasOwnProperty(key)) {
+	    arr.push(obj[key]);  
+	  }
+	}
+	return arr;
 }
+var arrDowntown = getPropToArray(downtown);
+var arrCapitolHill = getPropToArray(capitolHill);
+var arrSouthLakeUnion = getPropToArray(southLakeUnion);
+var arrWedgewood = getPropToArray(wedgewood);
+var arrBallard = getPropToArray(ballard);
+
+console.log(arrSouthLakeUnion);
 
 // function FranchiseDetailed (hr1, hr2, hr3, hr4, hr5, hr6, hr7, hr8, hr9, hr10, hr11)
 // 	this.hr1 = hr1;

@@ -1,71 +1,31 @@
-function Franchise (locFranchise, timeOpen, timeClose, minCust_perHr, maxCust_perHr, avgNumDonuts_perCust, hrsOperation){
-	  this.franchiseLoc = locFranchise;
-	  this.timeOpen = timeOpen;
-	  this.timeClose = timeClose;
-	  this.minCust_perHr = minCust_perHr;
-	  this.maxCust_perHr = maxCust_perHr;
-	  this.avgNumDonuts_perCust = avgNumDonuts_perCust;
+function Franchise-Summarized (locFranchise, totalHrsOpen, minCust_perHr, maxCust_perHr, avgNumDonuts_perCust, avgNumDonuts_perHour, totalDonuts_perDay) {
+	this.locFranchise = locFranchise;
+	//calc hrs of operation based on 24-hr day
+	this.totalHrsOpen = totalHrsOpen;
+	this.minCust_perHr = minCust_perHr;
+	this.maxCust_perHr = maxCust_perHr;
+	this.avgNumDonuts_perCust = avgNumDonuts_perCust;
+	this.avgNumDonuts_perHour = avgNumDonuts_perHour;
+	this.totalDonuts_perDay = totalDonuts_perDay;
+}
 
-	  //calc hrs of operation based on 24-hr day
-	  this.hrsOperation = function(open, close) {
-	  	return this.timeClose - this.timeOpen;
-	  }
-	  //generate rand num of cust based on min/max per hr
-	  this.randNumCust = function(min, max) {
-	  	return Math.floor(Math.random() * ((maxCust_perHr + 1) - minCust_perHr)) + minCust_perHr
-	  }
-	  //averages to output to console
-	  this.averages = function(hrs) {
-	  	var perHrArray = [];
-	  	var newArray = [];
-	  	var twoDecimalsArray = [];
-	  	var elAdd = 0;
-	  	var donutsPerHr_dailyAvg;
-	  	var totalDonuts_perDay;
-	  	hrs = this.hrsOperation();
+var downtown = new Franchise-Summarized('Downtown', 11, 8, 43, 4.50, 16, 181);
+var capitolHill = new Franchise-Summarized('Capitol Hill', 11, 4, 37, 2.00, 32, 354);
+var southLakeUnion = new Franchise-Summarized('South Lake Union', 11, 9, 23, 6.33, 100, 1101);
+var wedgewood = new Franchise-Summarized('Wedgewood', 11, 2, 28, 1.25, 19, 212);
+var ballard = new Franchise-Summarized('Ballard', 11, 8, 58, 3.75, 126, 1393);
 
-	  	for(var i = 0; i < hrs; i++) {
-	  		perHrArray.push(this.randNumCust());
-	  	}
-	  	console.log('Customers Per Hour: ' + perHrArray);
-	  	for(var i = 0; i < perHrArray.length; i++) {
-	  		newArray.push(perHrArray[i] * this
-	  			.avgNumDonuts_perCust);
-	  	}
-	  	//console.log(newArray);
-	  	for(var i = 0; i < newArray.length; i++) {
-	  		twoDecimalsArray.push(parseInt(newArray[i].toFixed(2)));
-	  	}	
-	  	console.log('Donuts Per Hour: ' + twoDecimalsArray);
-	  	for(var i = 0; i < twoDecimalsArray.length; i++) {
-	  		elAdd += twoDecimalsArray[i];
-	  		//console.log(elAdd);
-	  	}	
-	  	console.log('Daily Total Donuts: ' + elAdd);
-	  	donutsPerHr_dailyAvg = elAdd / twoDecimalsArray.length;
-	  	console.log('Daily Avg Donuts Per Hour: ' + (parseInt(donutsPerHr_dailyAvg.toFixed(2))));
-
-	  	return "";
-	  }
-
-	  this.stats = function(name) {
-	  	console.log('>>> ' + this.franchiseLoc);
-	  	console.log('Hours Open Each Day: ' + this.hrsOperation());
-	  	console.log('Min Number of Customers Per Hour: ' + this.minCust_perHr);
-	  	console.log('Max Number of Customers Per Hour: ' + this.maxCust_perHr)
-	  	console.log('Avg Donuts Per Customer: ' + this.avgNumDonuts_perCust);	
-	  	console.log(this.averages());
-	  }
-	}
-	var downtown = new Franchise('Downtown', 7, 18, 8, 43, 4.50);
-	var capitolHill = new Franchise('Capitol Hill', 7, 18, 4, 37, 2.00);
-	var southLakeUnion = new Franchise('South Lake Union', 7, 18, 9, 23, 6.33);
-	var wedgewood = new Franchise('Wedgewood', 7, 18, 2, 28, 1.25);
-	var ballard = new Franchise('Ballard', 7, 18, 8, 58, 3.75);
+// function Franchise-Detailed (hr1, hr2, hr3, hr4, hr5, hr6, hr7, hr8, hr9, hr10, hr11)
+// 	this.hr1 = hr1;
+// 	this.hr2 = hr2;
+// 	this.hr3 = hr3;
+// 	this.hr4 = hr4;
+// 	this.hr5 = hr5;
+// 	this.hr6 = hr6;
+// 	this.hr7 = hr7;
+// 	this.hr8 = hr8;
+// 	this.hr0 = hr9;
+// 	this.hr10 = hr10;
+// 	this.hr11 = hr11;
 
 
-	downtown.stats();
-	capitolHill.stats();
-	southLakeUnion.stats();	
-	wedgewood.stats();
-	ballard.stats();
