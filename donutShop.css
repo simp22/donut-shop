@@ -13,21 +13,8 @@ body {
 header, #settings, #objective, #dataSummarized, #dataDetailed, table, footer {
 	padding: 3% 5%;
 }
-#dataDetailed {
-	padding-left: 0;
-	padding-right: 0;
-}
-header {
-	background: #339966;
-	color: #eee;
-	text-align: center;
-}
-a {
-	color: #339966;
-	text-decoration: none;
-}
 button {
-	background-color: rgba(68,68,68,.2);
+	background-color: rgba(68, 68, 68, .2);
 	color: #fff;
 	border-radius: 5px;
 	border: none;
@@ -37,8 +24,35 @@ button {
 	text-transform: uppercase;
 }
 button:hover {
-	background-color: rgba(68,68,68,1);
+	background-color: rgba(68, 68, 68, 1);
 	transition: .3s;
+}
+#dataDetailed {
+	padding-left: 0;
+	padding-right: 0;
+	background-color: RGBA(255, 153, 0, .7);
+}
+#dataDetailed:hover {
+	background-color: RGBA(255, 153, 0, 1);
+	transition: .3s;
+}
+#dataDetailed h3 {
+	padding-bottom: 3%;
+}
+input:hover {
+	background-color: yellow;
+}
+button:hover, input:hover, #dataDetailed:hover {
+	cursor: pointer;
+}
+header {
+	background: #339966;
+	color: #eee;
+	text-align: center;
+}
+a {
+	color: #339966;
+	text-decoration: none;
 }
 table {
 	margin: 0 auto;
@@ -68,12 +82,6 @@ h1 {
 }
 #settings table {
 	width: 60%;
-}
-#dataDetailed {
-	background: #ff9900;
-}
-#dataDetailed h3 {
-	padding-bottom: 3%;
 }
 h3, caption {
 	text-transform: uppercase;
@@ -118,10 +126,10 @@ th, td {
 		padding: .3em .15em;
 	}
 }
-
-#detailedDowntown, #detailedCapitolHill, #detailedSouthLakeUnion, #detailedWedgewood, #detailedBallard {
+#template_dataDetailed, #detailedDowntown, #detailedCapitolHill, #detailedSouthLakeUnion, #detailedWedgewood, #detailedBallard {
 	display: none;
 }
+
 
 /*#detailedWedgewood_donutsPerHr td:nth-of-type(1) {
 	background-color: red;
