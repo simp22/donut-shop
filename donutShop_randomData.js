@@ -1,5 +1,5 @@
 function Franchise (locFranchise, timeOpen, timeClose, minCust_perHr, maxCust_perHr, avgNumDonuts_perCust, hrsOperation){
-	  this.franchiseLoc = locFranchise;
+	  this.locFranchise = locFranchise;
 	  this.timeOpen = timeOpen;
 	  this.timeClose = timeClose;
 	  this.minCust_perHr = minCust_perHr;

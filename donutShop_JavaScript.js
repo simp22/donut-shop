@@ -1,4 +1,5 @@
-function FranchiseSummarized (locFranchise, totalHrsOpen, minCust_perHr, maxCust_perHr, avgNumDonuts_perCust, avgNumDonuts_perHour, totalDonuts_perDay) {
+
+function Franchise (locFranchise, totalHrsOpen, minCust_perHr, maxCust_perHr, avgNumDonuts_perCust, avgNumDonuts_perHour, totalDonuts_perDay) {
 	this.locFranchise = locFranchise;
 	//calc hrs of operation based on 24-hr day
 	this.totalHrsOpen = totalHrsOpen;
@@ -9,11 +10,11 @@ function FranchiseSummarized (locFranchise, totalHrsOpen, minCust_perHr, maxCust
 	this.totalDonuts_perDay = totalDonuts_perDay;
 }
 
-var downtown = new FranchiseSummarized('Downtown', 11, 8, 43, 4.50, 16, 181);
-var capitolHill = new FranchiseSummarized('Capitol Hill', 11, 4, 37, 2.00, 32, 354);
-var southLakeUnion = new FranchiseSummarized('South Lake Union', 11, 9, 23, 6.33, 100, 1101);
-var wedgewood = new FranchiseSummarized('Wedgewood', 11, 2, 28, 1.25, 19, 212);
-var ballard = new FranchiseSummarized('Ballard', 11, 8, 58, 3.75, 126, 1393);
+var downtown = new Franchise('Downtown', 11, 8, 43, 4.50, 16, 181);
+var capitolHill = new Franchise('Capitol Hill', 11, 4, 37, 2.00, 32, 354);
+var southLakeUnion = new Franchise('South Lake Union', 11, 9, 23, 6.33, 100, 1101);
+var wedgewood = new Franchise('Wedgewood', 11, 2, 28, 1.25, 19, 212);
+var ballard = new Franchise('Ballard', 11, 8, 58, 3.75, 126, 1393);
 
 function getPropToArray(obj) {
 	var arr = [];
@@ -30,7 +31,7 @@ var arrSouthLakeUnion = getPropToArray(southLakeUnion);
 var arrWedgewood = getPropToArray(wedgewood);
 var arrBallard = getPropToArray(ballard);
 
-console.log(arrSouthLakeUnion);
+// console.log(arrSouthLakeUnion);
 
 // function FranchiseDetailed (hr1, hr2, hr3, hr4, hr5, hr6, hr7, hr8, hr9, hr10, hr11)
 // 	this.hr1 = hr1;

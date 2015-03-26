@@ -13,6 +13,10 @@ body {
 header, #settings, #objective, #dataSummarized, #dataDetailed, table, footer {
 	padding: 3% 5%;
 }
+#dataDetailed {
+	padding-left: 0;
+	padding-right: 0;
+}
 header {
 	background: #339966;
 	color: #eee;
@@ -22,9 +26,29 @@ a {
 	color: #339966;
 	text-decoration: none;
 }
+button {
+	background-color: rgba(68,68,68,.2);
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	padding: 1em 2em;
+	margin-top: 1em;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+button:hover {
+	background-color: rgba(68,68,68,1);
+	transition: .3s;
+}
 table {
 	margin: 0 auto;
 	width: 100%;
+}
+select, input {
+	width: 75%;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 1.1em;
 }
 h1, h2, h3, caption {
 	margin: 0;
@@ -46,12 +70,12 @@ h1 {
 	width: 60%;
 }
 #dataDetailed {
- background: #ff9900;
+	background: #ff9900;
 }
 #dataDetailed h3 {
 	padding-bottom: 3%;
 }
-caption {
+h3, caption {
 	text-transform: uppercase;
 }
 th, td {
@@ -64,10 +88,6 @@ th, td {
  background: #e6e6dc;
 }
 
-#detailedDowntown, #detailedCapitolHill, #detailedSouthLakeUnion, #detailedWedgewood, #detailedBallard {
-	display: none;
-}
-
 @media (min-width: 1000px) {
 	body {
 		margin-left: 20%;
@@ -78,10 +98,35 @@ th, td {
 	body {
 		font-size: .8em;
 	}
+	header h1 {
+		font-size: 3em;
+	}
+	header h2 {
+		display: none;
+	}
+	#objective {
+		display: none;
+	}
 	#settings table {
 		width: 75%;
 	}
+	#dataSummarized {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	th, td {
+		padding: .3em .15em;
+	}
 }
+
+#detailedDowntown, #detailedCapitolHill, #detailedSouthLakeUnion, #detailedWedgewood, #detailedBallard {
+	display: none;
+}
+
+/*#detailedWedgewood_donutsPerHr td:nth-of-type(1) {
+	background-color: red;
+}*/
+
 
 
 

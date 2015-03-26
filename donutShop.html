@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Simply Donuts | Statistics</title>
+	<title>Franchise Stats | Simply Donuts</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Michael Williams">
-	<link rel="stylesheet" href="donutShop.css"></link>
+	<link rel="stylesheet" href="donutShop.css">
 </head>
 <body>
 
@@ -26,53 +26,64 @@
 
 	<main>
 
-		<section>
-			<h3>Test</h3>
-			<table>
-				<tr id="test">
-				</tr>
-			</table>
-		</section>
-
 		<section id="settings">
 
 			<h3>Settings</h3>
 
 			<table>
 				<tr>
+					<th scope="row">Location</th>
+					<td>
+						<select id="locSelected">
+  						<option value="downtown">Downtown</option>
+  						<option value="capitolHill">Capitol Hill</option>
+  						<option value="southLakeUnion">South Lake Union</option>
+  						<option value="wedgewood">Wedgewood</option>
+  						<option value="ballard">Ballard</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
 					<th scope="row">Date</th>
-					<td><time datetime="2015-03-22">March 22, 2015</time></td>
+					<td><input type="date" disabled></td>
 				</tr>
 				<tr>
 					<th scope="row">Opening Time</th>
-					<td><time datetime="07:00">7:00 AM</time></td>
+					<td>
+						<select disabled>
+  						<option value="7">7:00 AM</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<th scope="row">Closing Time</th>
-					<td><time datetime="18:00">6:00 PM</time></td>
-				</tr>
-				<!-- <tr>
-					<th scope="row">Downtown</th>
-					<td><input type="checkbox" id="optSummarizedDowntown" checked="checked"></td>
-				</tr>
-				<tr>
-					<th scope="row">Capitol Hill</th>
-					<td><input type="checkbox" id="optSummarizedCapitolHill" checked="checked"></td>
+					<td>
+						<select disabled>
+  						<option value="18">6:00 PM</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
-					<th scope="row">South Lake Union</th>
-					<td><input type="checkbox" id="optSummarizedSouthLakeUnion" checked="checked"></td>
+					<th scope="row">Min Customers</th>
+					<td>
+						<input type="number" value="1" id="minCust">
+					</td>
 				</tr>
 				<tr>
-					<th scope="row">Wedgewood</th>
-					<td><input type="checkbox" id="optSummarizedWedgewood" checked="checked"></td>
+					<th scope="row">Max Customers</th>
+					<td>
+						<input type="number" value="1" id="maxCust">
+					</td>
 				</tr>
 				<tr>
-					<th scope="row">Ballard</th>
-					<td><input type="checkbox" id="optSummarizedBallard" checked="checked"></td> -->
+					<td colspan="2">
+						<button>Submit</button>
+					</td>
 				</tr>
 			</table>
 		</section>
+
+		
 
 		<section id="dataSummarized">
 
@@ -88,7 +99,7 @@
 					<th scope="col"><a href="#detailedBallard">Ballard</a></th>
 				</thead>
 				<tbody>
-					<tr>
+					<tr id="hrsOpen">
 						<th scope="row">Hours Open Each Day</th>
 						<td>11</td>
 						<td>11</td>
@@ -120,21 +131,21 @@
 						<td>1.25</td>
 						<td>3.75</td>
 					</tr>
-					<tr>
-						<th scope="row">Average Donuts Purchased Per Hour</th>
-						<td>16</td>
-						<td>32</td>
-						<td>100</td>
-						<td>19</td>
-						<td>126</td>
-					</tr>
-					<tr>
+					<tr id=totalDonuts>
 						<th scope="row">Total Donuts Sold for the Day</th>
 						<td>181</td>
 						<td>354</td>
 						<td>1101</td>
 						<td>212</td>
 						<td>1393</td>
+					</tr>
+					<tr id=avgDonuts>
+						<th scope="row">Average Donuts Purchased Per Hour</th>
+						<td>16</td>
+						<td>32</td>
+						<td>100</td>
+						<td>19</td>
+						<td>126</td>
 					</tr>
 					<tr>
 						<th></th>
@@ -148,7 +159,7 @@
 				<tfoot>
 					<tr>
 						<td></td>
-						<td colspan="5">&ast; This output sets the parameters for each location's generated <a href="#dataDetailed">Detailed Data</a> populated below.</td>
+						<td colspan="5">&ast; Activating checkbox populates in the below <a href="#dataDetailed">Detailed Data</a></td>
 					</tr>
 				</tfoot>
 			</table>
@@ -175,7 +186,7 @@
 						<th scope="col"><time datetime="17:00">5-6 PM</time></th>
 				</thead>
 				<tbody>
-					<tr>
+					<tr id="detailedDowntown_custPerHr">
 						<th scope="row">Customers Per Hour</th>
 						<td>16</td>
 						<td>4</td>
@@ -189,7 +200,7 @@
 						<td>6</td>
 						<td>14</td>
 					</tr>
-					<tr>
+					<tr id="detailedDowntown_donutsPerHr">
 						<th scope="row">Donuts Purchased Per Hour</th>
 						<td>20</td>
 						<td>5</td>
@@ -215,7 +226,6 @@
 			<table id="detailedCapitolHill">
 				<caption>Capitol Hill</caption>
 				<thead>
-				<thead>
 						<th></th>
 						<th scope="col"><time datetime="07:00">7-8 AM</time></th>
 						<th scope="col"><time datetime="08:00">8-9</time></th>
@@ -229,9 +239,8 @@
 						<th scope="col"><time datetime="16:00">4-5</time></th>
 						<th scope="col"><time datetime="17:00">5-6 PM</time></th>
 				</thead>
-				</thead>
 				<tbody>
-					<tr>
+					<tr id="detailedCapitolHill_custPerHr">
 						<th scope="row">Customers Per Hour</th>
 						<td>9</td>
 						<td>19</td>
@@ -245,7 +254,7 @@
 						<td>36</td>
 						<td>6</td>
 					</tr>
-					<tr>
+					<tr id="detailedCapitolHill_donutsPerHr">
 						<th scope="row">Donuts Purchased Per Hour</th>
 						<td>18</td>
 						<td>38</td>
@@ -271,7 +280,6 @@
 			<table id="detailedSouthLakeUnion">
 				<caption>South Lake Union</caption>
 				<thead>
-				<thead>
 						<th></th>
 						<th scope="col"><time datetime="07:00">7-8 AM</time></th>
 						<th scope="col"><time datetime="08:00">8-9</time></th>
@@ -285,9 +293,8 @@
 						<th scope="col"><time datetime="16:00">4-5</time></th>
 						<th scope="col"><time datetime="17:00">5-6 PM</time></th>
 				</thead>
-				</thead>
 				<tbody>
-					<tr>
+					<tr id="detailedSouthLakeUnion_custPerHr">
 						<th scope="row">Customers Per Hour</th>
 						<td>10</td>
 						<td>11</td>
@@ -301,7 +308,7 @@
 						<td>23</td>
 						<td>15</td>
 					</tr>
-					<tr>
+					<tr id="detailedSouthLakeUnion_donutsPerHr">
 						<th scope="row">Donuts Purchased Per Hour</th>
 						<td>63</td>
 						<td>69</td>
@@ -327,7 +334,6 @@
 			<table id="detailedWedgewood">
 				<caption>Wedgewood</caption>
 				<thead>
-				<thead>
 						<th></th>
 						<th scope="col"><time datetime="07:00">7-8 AM</time></th>
 						<th scope="col"><time datetime="08:00">8-9</time></th>
@@ -341,9 +347,8 @@
 						<th scope="col"><time datetime="16:00">4-5</time></th>
 						<th scope="col"><time datetime="17:00">5-6 PM</time></th>
 				</thead>
-				</thead>
 				<tbody>
-					<tr>
+					<tr id="detailedWedgewood_custPerHr">
 						<th scope="row">Customers Per Hour</th>
 						<td>13</td>
 						<td>6</td>
@@ -357,7 +362,7 @@
 						<td>28</td>
 						<td>13</td>
 					</tr>
-					<tr>
+					<tr id="detailedWedgewood_donutsPerHr">
 						<th scope="row">Donuts Purchased Per Hour</th>
 						<td>16</td>
 						<td>7</td>
@@ -383,7 +388,6 @@
 			<table id="detailedBallard">
 				<caption>Ballard</caption>
 				<thead>
-				<thead>
 						<th></th>
 						<th scope="col"><time datetime="07:00">7-8 AM</time></th>
 						<th scope="col"><time datetime="08:00">8-9</time></th>
@@ -397,9 +401,8 @@
 						<th scope="col"><time datetime="16:00">4-5</time></th>
 						<th scope="col"><time datetime="17:00">5-6 PM</time></th>
 				</thead>
-				</thead>
 				<tbody>
-					<tr>
+					<tr id="detailedBallard_custPerHr">
 						<th scope="row">Customers Per Hour</th>
 						<td>26</td>
 						<td>37</td>
@@ -413,7 +416,7 @@
 						<td>25</td>
 						<td>51</td>
 					</tr>
-					<tr>
+					<tr id="detailedBallard_donutsPerHr">
 						<th scope="row">Donuts Purchased Per Hour</th>
 						<td>97</td>
 						<td>138</td>
@@ -441,7 +444,7 @@
 	<footer>&copy; 2015 michael williams</footer>
 	
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="donutShop_JavaScript.js"></script>
-	<script type="text/javascript" src="donutShop_jQuery.js"></script>
+	<script type="text/javascript" src="donutShop_calculations.js"></script>
+	<script type="text/javascript" src="donutShop_events.js"></script>
 </body>
 </html>
